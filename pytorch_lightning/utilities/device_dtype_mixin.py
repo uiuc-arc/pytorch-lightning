@@ -3,6 +3,7 @@ from typing import Union, Optional
 import torch
 from torch.nn import Module
 
+import numpy as np
 
 class DeviceDtypeModuleMixin(Module):
 
@@ -65,7 +66,7 @@ class DeviceDtypeModuleMixin(Module):
             ...     def __init__(self, weight: torch.Tensor):
             ...         super().__init__()
             ...         self.register_buffer('weight', weight)
-            >>> _ = torch.manual_seed(0)
+            >>> _ = torch.manual_seed(np.random.randint(1,9999999))
             >>> module = ExampleModule(torch.rand(3, 4))
             >>> module.weight #doctest: +ELLIPSIS
             tensor([[...]])

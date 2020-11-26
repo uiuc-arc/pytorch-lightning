@@ -192,7 +192,7 @@ def test_with_accumulate_grad_batches():
 
     logger = StoreHistoryLogger()
 
-    np.random.seed(42)
+    np.random.seed(np.random.randint(1,9999999))
     for i, loss in enumerate(np.random.random(10)):
         logger.agg_and_log_metrics({'loss': loss}, step=int(i / 5))
 

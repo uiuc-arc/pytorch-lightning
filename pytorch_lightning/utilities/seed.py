@@ -18,10 +18,10 @@ def seed_everything(seed: Optional[int] = None) -> int:
     min_seed_value = np.iinfo(np.uint32).min
 
     try:
-        if seed is None:
-            seed = _select_seed_randomly(min_seed_value, max_seed_value)
-        else:
-            seed = int(seed)
+        #if seed is None:
+        seed = _select_seed_randomly(min_seed_value, max_seed_value)
+        #else:
+            #seed = int(seed)
     except (TypeError, ValueError):
         seed = _select_seed_randomly(min_seed_value, max_seed_value)
 
